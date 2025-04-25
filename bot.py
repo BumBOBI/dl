@@ -604,33 +604,42 @@ def handle_add_token(message):
         file.write(f'{phone}|{token}\n')
 
     bot.reply_to(message, f'Đã thêm thành công: {phone}|{token} vào live.txt.')
-  
+
 @bot.message_handler(commands=['status'])
-def handle_status_server(message):
+def handle_status(message):
     if message.from_user.id not in ADMIN_ID:
-        if not check():
-            bot.reply_to(message, 'Hiện tại bot đang off gọi Admin để bật bot.')
-            return
-    admin_id = message.from_user.id
-    if admin_id not in ADMIN_ID:
-        bot.reply_to(message, 'Bạn không có quyền sử dụng lệnh /status.')
         return
 
-    num_processes = len(processes)
-    memory_info = psutil.virtual_memory()
+    # Lấy thông tin hệ thống
+    num_processes = len(psutil.pids())
     cpu_percent = psutil.cpu_percent(interval=1)
-    uptime = datetime.datetime.now() - datetime.datetime.fromtimestamp(psutil.boot_time())
+    memory_info = psutil.virtual_memory()
+    uptime_seconds = time.time() - psutil.boot_time()
+    uptime = datetime.timedelta(seconds=int(uptime_seconds))
 
+    # Đếm số dòng trong live.txt
+    try:
+        live_file_path = os.path.join(os.getcwd(), 'live.txt')
+        if os.path.exists(live_file_path):
+            with open(live_file_path, 'r') as f:
+                line_count = sum(1 for _ in f)
+        else:
+            line_count = 0
+    except Exception as e:
+        line_count = f'Lỗi: {str(e)}'
+
+    # Ghép thông tin
     status_message = (
         f'🖥️ **Server Status:**\n'
         f'**Number of Active Processes:** {num_processes}\n'
         f'**CPU Usage:** {cpu_percent}%\n'
         f'**Memory Usage:** {memory_info.percent}%\n'
-        f'**Uptime:** {str(uptime).split(".")[0]}'
+        f'**Uptime:** {str(uptime).split(".")[0]}\n'
+        f'**API CALL:** {line_count}'
     )
 
-    bot.reply_to(message, text=status_message, parse_mode='Markdown')
-
+    bot.reply_to(message, status_message, parse_mode='Markdown')
+    
 @bot.message_handler(commands=['bot'])
 def handle_status_bot(message):
     msg = message.text.split()
