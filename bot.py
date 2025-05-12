@@ -14,7 +14,7 @@ ADMIN_ID = [5594480622, 6238630618]
 processes = []
 banned_numbers = []
 allowed_users = []
-SERVER_ID = [-1002162807845]
+SERVER_ID = [-1002590856971]
 
 def check():
     connection = get_db_connection()
