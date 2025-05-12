@@ -664,12 +664,20 @@ def handle_status_server(message):
     cpu_percent = psutil.cpu_percent(interval=1)
     uptime = datetime.datetime.now() - datetime.datetime.fromtimestamp(psutil.boot_time())
 
+    try:
+        with open("live.txt", "r") as f:
+            valid_lines = [line for line in f if '|' in line]
+            api_count = len(valid_lines)
+    except FileNotFoundError:
+        api_count = 0
+  
     status_message = (
-        f'🖥️ **Server Status:**\n'
-        f'**Number of Active Processes:** {num_processes}\n'
-        f'**CPU Usage:** {cpu_percent}%\n'
-        f'**Memory Usage:** {memory_info.percent}%\n'
-        f'**Uptime:** {str(uptime).split(".")[0]}'
+         f'🖥️ **Server Status:**\n'
+         f'**Số API còn sống:** {api_count}\n'
+         f'**Number of Active Processes:** {num_processes}\n'
+         f'**CPU Usage:** {cpu_percent}%\n'
+         f'**Memory Usage:** {memory_info.percent}%\n'
+         f'**Uptime:** {str(uptime).split(".")[0]}'
     )
 
     bot.reply_to(message, text=status_message, parse_mode='Markdown')
